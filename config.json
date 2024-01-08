@@ -1,0 +1,35 @@
+{
+    "log_level" : "INFO",
+    "experiments": {
+        "dt": 0.05,
+        "t_max": 15,
+        "epoch": 100,
+        "ibvs_gain": 0.2,
+        "q_start": [0.0, 0.0, 1.96349541, 0.0, -1.57079633, 0],
+        "desired_f": [149.0, 145.0, 125.0, 121.0, 101.0, 145.0, 125.0, 169.0],
+        "visualization": false,
+        "change_q_start": true,
+        "seed": 12345
+    },
+    "estimator": {
+        "method": "MCKF",
+        "estimator_params": {
+            "initial_guess": true, 
+            "kernel_bw": 10, 
+            "fpi_threshold": 0.1, 
+            "fpi_epoch_max": 1000,
+            "annealing": false
+        }
+    },
+    "noise": {
+        "type": "ALPHA_STABLE",
+        "noise_params": {
+            "beta": 0,
+            "gamma": 1,
+            "delta": 0
+        },
+        "hold": false,
+        "hold_time": 0.5,
+        "seed": 123456
+    }
+}
